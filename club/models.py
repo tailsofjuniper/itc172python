@@ -19,8 +19,8 @@ class Meeting(models.Model):
     
 
 class MeetingMinutes(models.Model):
-    meetingid=models.ForeignKey(User, on_delete=models.DO_NOTHING)
-    meetingattendance=models.CharField(max_length=255)
+    meetingid=models.ForeignKey(Meeting, on_delete=models.DO_NOTHING)
+    meetingattendance=models.ManyToManyField(User)
     minutestext=models.TextField()
     
     def __str__(self):
@@ -31,9 +31,10 @@ class MeetingMinutes(models.Model):
 
 class Resource(models.Model):
     resourcename=models.CharField(max_length=255)
-    resourceurl=models.CharField(max_length=255)
+    resourcype=models.CharField(max_length=255)
+    resourceurl=models.URLField
     resourcedateentered=models.DateField()
-    minutestext=models.TextField()
+    userid=models.ForeignKey(User, on_delete=models.DO_NOTHING)
 
     
     def __str__(self):
@@ -42,3 +43,19 @@ class Resource(models.Model):
     class Meta:
         db_table='resource'
         verbose_name_plural='resources'
+
+class Event(models.Model):
+    eventtitle=models.CharField(max_length=255)
+    eventlocation=models.CharField(max_length=255)
+    eventdate=models.DateField()
+    eventtime=models.TimeField()
+    eventdescription=models.CharField(max_length=255)
+    eventuserid=models.ForeignKey(User, on_delete=models.DO_NOTHING)
+
+    
+    def __str__(self):
+        return self.eventtitle
+ 
+    class Meta:
+        db_table='event'
+        verbose_name_plural='events'
