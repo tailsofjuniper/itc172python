@@ -4,12 +4,16 @@
 <table class='table'>
  <tr>
      <th>Name</th>
-     <th>Description</th>
+     <th>Type</th>
+     <!-- <th>Date Entered</th> -->
+
  </tr>
  {% for t in resource_list %}
    <tr>
-       <td>{{ t.resourceename }}</td>
-       <td>{{ t.resourcetype }}</td>
+       <td>{{ t.resourcename }}</td>
+       <td>{{ t.resourcype }}</td>
+       <!-- <td>{{ t.resourcedateentered }}</td> -->
+
    </tr>
 
  {% endfor %}

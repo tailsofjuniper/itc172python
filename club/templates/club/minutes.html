@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Meeting Minutes</h1>
+<table class='table'>
+ <tr>
+     <th>Name</th>
+     <th>Type</th>
+
+ </tr>
+ {% for t in minutes_list %}
+   <tr>
+       <td>{{ t.minutestext }}</td>
+
+   </tr>
+
+ {% endfor %}
+
+
+</table>
+
+
+{% endblock %}
