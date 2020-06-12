@@ -14,7 +14,8 @@ def meetingdetails (request, id):
     meeting_detail=get_object_or_404(Meeting, pk=id)
     meeting_location=meeting_detail.meetinglocation
     # discount=prod.memberdiscount
-    # reviews=Review.objects.filter(product=id).count()
+    agenda=meeting_detail.meetingagenda
+    # agenda=Meeting.objects.filter(meetingagenda=id).count()
     context={
         'meeting_detail' : meeting_detail,
         'meeting_location' : meeting_location,
