@@ -1,9 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
-<h2>{{ meet.meetingname }}</h2>
-<p>Date: {{ meet.meetingdate }} </p>
-<p>Time: {{ meet.meetingtime }}</p>
-<p>Location: {{ meet.meetinglocation }}</p>
-<p>Agenda: {{ meet.meetingagenda }}</p>
-
+<h2>Meeting Details</h2>
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Location</th>
+        <th>Agenda</th>
+    </tr>
+    {% for md in meeting_detail %}
+    <tr>
+        <td>{{ md.meetingname }}</td>
+        <td>{{ md.meetingdate }} </td>
+        <td>{{ md.meetingtime }}</td>
+        <td>{{ md.meetinglocation }}</td>
+        <td>{{ md.meetingagenda }}</td>
+    </tr>
+    {% endfor %}
+</table>
 {% endblock %}

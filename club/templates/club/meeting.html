@@ -2,18 +2,17 @@
 {% block content %}
 <h2>Meetings</h2>
 <table class="table">
-  <tr>
-      <th>Name</th>
-      <th>Date</th>
-      <th>Agenda</th>
-  </tr>
-  {% for m in meeting_list %}
     <tr>
-        <td><a href="{% url 'meetingdetails' id=m.id %}">{{ m.meetingname }}</a>    </td>
+        <th>Name</th>
+        <th>Date</th>
+        <th>Agenda</th>
+    </tr>
+    {% for m in meeting_list %}
+    <tr>
+        <td><a href="{% url 'meetingdetails' id=m.id %}">{{ m.meetingname }}</a></td>
         <td>{{ m.meetingdate }}</td>
         <td>{{ m.meetingagenda }}</td>
     </tr>
     {% endfor %}
-
 </table>
 {% endblock %}
