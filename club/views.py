@@ -1,5 +1,6 @@
 from .models import Meeting, MeetingMinutes, Resource, Event
 from django.shortcuts import render, get_object_or_404
+from .forms import MinutesForm
 
 # Create your views here.
 def index (request):
