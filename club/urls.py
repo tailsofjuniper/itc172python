@@ -8,4 +8,5 @@ urlpatterns=[
     path('meetingdetails/<int:id>', views.meetingdetails, name='meetingdetails'),
     # path('minutes/', views.getminutes, name='minutes')
     # path('event/', views.getevent, name='event')
+    path('minutes/', views.meetingminutes, name='meetingminutes'),
 ]

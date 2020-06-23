@@ -23,3 +23,14 @@ def meetingdetails (request, id):
         'meeting_agenda' : meeting_agenda,
     }
     return render(request, 'club/meetingdetails.html', context=context)
+def meetingminutes(request):
+     form=MinutesForm
+     if request.method=='POST':
+          form=MinutesForm(request.POST)
+          if form.is_valid():
+               post=form.save(commit=True)
+               post.save()
+               form=MinutesForm()
+     else:
+          form=MinutesForm()
+     return render(request, 'club/minutes.html', {'form': form})

@@ -3,5 +3,5 @@ from .models import Meeting, MeetingMinutes
 
 class MinutesForm(forms.ModelForm):
     class Meta:
-        model=Meeting
+        model=MeetingMinutes
         fields='__all__'
